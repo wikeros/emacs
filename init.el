@@ -15,7 +15,15 @@
 
 ;; Omat jutut
 
+;; Alustus
+
 (setq inhibit-startup-message t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(global-set-key(kbd "M-o")'other-window)
+(global-visual-line-mode t)
+
+;;Paketit
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -24,14 +32,6 @@
 
 (package-initialize)
 
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1 )))
-
-(global-set-key(kbd "M-o")'other-window)
-
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -39,11 +39,10 @@
 (use-package try
   :ensure t)
 
-(global-visual-line-mode t)
+;; Org-mode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1 )))
 
-;;(use-package which-key
-;;  :ensure t
-;;  :config (which-key-mode))
 
 
 
