@@ -14,7 +14,7 @@
  )
 
 ;; Omat jutut
-
+;;
 ;; Alustus
 
 (setq inhibit-startup-message t)
@@ -43,7 +43,19 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1 )))
 
+;; Bufferit
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 
+;; Automaattinen täydennys
 
-
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    ))
