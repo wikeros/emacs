@@ -5,6 +5,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-use-speed-commands t)
  '(package-selected-packages (quote (iedit ergoemacs-mode try use-package rjsx-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -60,7 +61,13 @@
     (global-auto-complete-mode t)
     ))
 
-;; iedit eli...
+;; iedit eli monta kursoria
 
 (use-package iedit
   :ensure t)
+
+;; LaTeX-mode
+
+
+
+
